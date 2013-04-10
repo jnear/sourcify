@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Workarounds before ruby-core officially supports Proc#to_source (& friends)}
   s.description = %q{}
 
-  s.add_dependency 'ruby2ruby', '~> 1.3.1'
+  s.add_dependency 'ruby2ruby', '>= 1.3.1'
   s.add_dependency 'sexp_processor', '~> 3.2.0'
   s.add_dependency 'ruby_parser', '~> 2.3.1'
   s.add_dependency 'file-tail', '~> 1.0.10'

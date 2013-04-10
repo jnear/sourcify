@@ -26,7 +26,11 @@ module Sourcify
 
       def sexp(opts)
         (@sexps ||= {})[opts.hash] ||= (
-          extracted = extracted_source(opts)[1]
+          extracted = extracted_source(opts)
+          puts "extracted: ******************************"
+          puts extracted
+          puts "done"
+
           raw_code = (("\n" * @source_code.line) + extracted).same_encoding_as(extracted)
 
           sexp = Converter.to_sexp(raw_code, @source_code.file)

@@ -40,9 +40,7 @@ module Sourcify
               if valid?(codes[1]) && @body_matcher.call(codes[0])
                 # NOTE: Need to fix singleton method to avoid errors (eg. undefined object)
                 # downstream
-                @results << codes.map do |s|
-                  s.sub(%r{^(def\s+)(?:[^\.]+\.)?(#{@name}.*end)$}m, '\1\2')
-                end
+                @results = codes
                 raise Escape if @stop_on_newline or @lineno != 1
                 reset_attributes
               end
