@@ -14,10 +14,6 @@ module Sourcify
               :stop_on_newline => false,
             }).select{|(raw, normalized)| matcher.call(raw) }
 
-            puts "RESULTS"
-            puts results[0]
-            puts "DONE"
-
             case results.size
             when 0 then raise NoMatchingMethodError
             when 1 then results[0]
